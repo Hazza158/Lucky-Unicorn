@@ -20,11 +20,11 @@ def yes_no(question):
 def instructions():
     print("**** How to Play ****")
     print()
-    print("(1): type how much money you want to play with. press enter")
+    print("(1): type how much money you want to play with (must be between $0 and $10). press enter ")
     print()
     print("(2): press enter as many times as you can")
     print()
-    print("(3): see how many rounds you get to play")
+    print("(3): see how many rounds you get to play ")
     print()
     print("Good Luck!!!")
     return "" 
@@ -136,5 +136,4 @@ while play_again == "":
 
 print()
 print("Final balance: ${:.2f}".format(balance))
-
 
