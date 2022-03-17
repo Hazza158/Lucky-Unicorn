@@ -14,24 +14,25 @@ def yes_no(question):
             return "no"
         
         else:
-            print("please answer yes / no")
+            print("Please answer yes / no")
 
 # Displays instructions, returns ""        
 def instructions():
+    print()
     print("**** How to Play ****")
     print()
-    print("(1): type how much money you want to play with (must be between $0 and $10). press enter ")
+    print("(1): Type how much money you want to play with. Press enter")
     print()
-    print("(2): press enter as many times as you can")
+    print("(2): Press enter as many times as you can")
     print()
-    print("(3): see how many rounds you get to play ")
+    print("(3): See how many rounds you get to play")
     print()
     print("Good Luck!!!")
     return "" 
 
 
 def num_check(question, low, high) :
-    error = "please enter a whole number between 1 and 10\n"
+    error = "Please enter a whole number between 1 and 10\n"
 
     valid = False 
     while not valid:
@@ -70,14 +71,14 @@ def statement_generator(statement, decoration, style):
 
 # ***** Main Routine goes here ****
 
-played_before = yes_no("have you played the game before?")
+played_before = yes_no("Have you played the game before?")
 
 if played_before == "no": 
     instructions()
 
 print()
 
-how_much = num_check("how much would you like to play with? ", 0, 10)
+how_much = num_check("How much would you like to play with? ", 0, 10)
 
 balance = how_much
 
@@ -88,6 +89,8 @@ while play_again == "":
 
     #inrease num of rounds played
     rounds_played += 1 
+    
+    print()
 
     rounds_heading = "** Round #{} **".format(rounds_played)
     statement_generator(rounds_heading, "-", 3)
@@ -128,7 +131,7 @@ while play_again == "":
 
     if balance <1:
         play_again = "xxx"
-        print("sorry you have run out of money")
+        print("***Sorry you have run out of money***")
     else:
         play_again = input("press <Enter> to play again or <xxx> to quit")
     
@@ -136,4 +139,5 @@ while play_again == "":
 
 print()
 print("Final balance: ${:.2f}".format(balance))
+
 
